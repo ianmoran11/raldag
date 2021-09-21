@@ -18,23 +18,18 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of raldag is to ...
-
-
-
-## Installation
-
-You can install the released version of raldag from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("raldag")
-```
 Create and generate data from DAGs.
 
-build
+## Installation
+You can install the development version from [GitHub](https://github.com/) with:
+``` r
+# install.packages("devtools")
+devtools::install_github("ianmoran11/raldag")
+```
+
 ## Example
 
-```{r setup}
+```{r message = FALSE, warning = FALSE}
 rm(list = ls())
 library(tidyverse)
 library(tidygraph)
@@ -47,7 +42,7 @@ library(raldag)
 ```
 
 ### Specify how nodes generate data and evaluate inputs
-```{r}
+```{r message = FALSE, warning = FALSE}
 a <- v("a", .f = d(~ rnorm(n = 1000, mean = rsum(.x), sd = .5)))
 c <- v("c", .f = d(~ rnorm(n = 1000, mean = rsum(.x), sd = .5)))
 x <- v("x", .f = d(~ rnorm(n = 1000, mean = rsum(.x), sd = .5)))
@@ -66,7 +61,7 @@ dag_plot(g)
 ```
 
 ### Generate data from DAG
-```{r}
+```{r message = FALSE, warning = FALSE}
 obs <- g %>% simulate(label = "Observational")
 do0 <- g %>% ralget::do(a = -1) %>% simulate(label = "do(a = -1)",seed = 1)
 do1 <- g %>% ralget::do(a =  1) %>% simulate(label = "do(a =  1)",seed = 1)

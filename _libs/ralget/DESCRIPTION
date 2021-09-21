@@ -13,9 +13,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Imports: dplyr, tidyr, purrr, tidygraph, magrittr, tibble, stringr,
-        rlang, ggraph, forcats,
+        rlang, ggraph, forcats
 Suggests: testthat (>= 2.1.0), knitr, rmarkdown, tidyverse
 NeedsCompilation: no
-Packaged: 2021-09-21 10:47:05 UTC; ian
+Packaged: 2021-09-21 11:40:35 UTC; ian
 Depends: R (>= 3.5.0)
-Built: R 4.1.1; ; 2021-09-21 10:47:07 UTC; unix
+Built: R 4.1.1; ; 2021-09-21 11:40:37 UTC; unix

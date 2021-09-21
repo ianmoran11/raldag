@@ -6,65 +6,28 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of raldag is to …
+Create and generate data from DAGs.
 
 ## Installation
 
-You can install the released version of raldag from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
-install.packages("raldag")
+# install.packages("devtools")
+devtools::install_github("ianmoran11/raldag")
 ```
 
-Create and generate data from DAGs.
-
-build ## Example
+## Example
 
 ``` r
 rm(list = ls())
 library(tidyverse)
-#> ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.1 ──
-#> ✔ ggplot2 3.3.3     ✔ purrr   0.3.4
-#> ✔ tibble  3.1.1     ✔ dplyr   1.0.5
-#> ✔ tidyr   1.1.3     ✔ stringr 1.4.0
-#> ✔ readr   1.4.0     ✔ forcats 0.5.1
-#> ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::do()     masks raldag::do()
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
 library(tidygraph)
-#> 
-#> Attaching package: 'tidygraph'
-#> The following object is masked from 'package:stats':
-#> 
-#>     filter
 library(ggraph)
 library(patchwork)
 library(magrittr)
-#> 
-#> Attaching package: 'magrittr'
-#> The following object is masked from 'package:purrr':
-#> 
-#>     set_names
-#> The following object is masked from 'package:tidyr':
-#> 
-#>     extract
 library(ralget)
-#> 
-#> Attaching package: 'ralget'
-#> The following object is masked from 'package:dplyr':
-#> 
-#>     do
-#> The following objects are masked from 'package:raldag':
-#> 
-#>     b, do, extract_data, increment_t, rsum, simulate, unsafe_rsum
-#> The following object is masked from 'package:stats':
-#> 
-#>     simulate
-#> The following object is masked from 'package:base':
-#> 
-#>     %x%
 library(ggforce)
 library(raldag)
 ```
@@ -90,7 +53,7 @@ g <-
 dag_plot(g)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ### Generate data from DAG
 
@@ -106,4 +69,4 @@ do1 <- g %>% ralget::do(a =  1) %>% simulate(label = "do(a =  1)",seed = 1)
 bind_rows(obs, do0, do1) %>% plot_joint_distributions()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
