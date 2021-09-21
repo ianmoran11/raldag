@@ -1,0 +1,32 @@
+Package: raldag
+Title: Create and generate data from DAGs. 
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Ian",
+           family = "Moran",
+           role = c("aut", "cre"),
+           email = "ian.moran11@gmail.com")
+Description: Create and generate data from DAGs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    dplyr,
+    tidyr,
+    purrr,
+    tidygraph,
+    magrittr,
+    tibble,
+    stringr,
+    rlang,
+    ggraph,
+    forcats
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown,
+    tidyverse
+Remotes:
+    ianmoran11/ralget

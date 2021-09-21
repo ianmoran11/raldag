@@ -1,0 +1,11 @@
+b                       A shorthand to represent coefficient in a data
+                        generating process.
+const_map               Set value for variable in DAG
+d                       Specify a data generating process
+do                      Set value for variable in DAG
+do.ralget               Set value for variable in DAG
+extract_data            Set value for variable in DAG
+increment_t             Set value for variable in DAG
+rsum                    Vector addition
+simulate                Simulate data from a dag
+unsafe_rsum             Vector addition

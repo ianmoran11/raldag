@@ -1,0 +1,8 @@
+library(usethis)
+library(languageserver)
+create_package(path = path)
+proj_activate(path)
+use_mit_license("Ian Moran")
+use_readme_md()
+use_readme_rmd()
+use_git()
