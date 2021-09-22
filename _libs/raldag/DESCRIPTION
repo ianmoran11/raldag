@@ -16,8 +16,8 @@ Imports: dplyr, tidyr, purrr, tidygraph, magrittr, tibble, stringr,
 Suggests: testthat (>= 2.1.0), knitr, rmarkdown, tidyverse
 Remotes: ianmoran11/ralget
 NeedsCompilation: no
-Packaged: 2021-09-21 11:11:16 UTC; ian
+Packaged: 2021-09-22 11:06:00 UTC; ian
 Author: Ian Moran [aut, cre]
 Maintainer: Ian Moran <ian.moran11@gmail.com>
 Depends: R (>= 3.5.0)
-Built: R 4.1.1; ; 2021-09-21 11:11:17 UTC; unix
+Built: R 4.1.1; ; 2021-09-22 11:06:01 UTC; unix

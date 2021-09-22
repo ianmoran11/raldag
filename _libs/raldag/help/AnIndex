@@ -1,10 +1,13 @@
 b	b
 const_map	const_map
 d	d
+dag_plot	dag_plot
 do	do
 do.ralget	do.ralget
 extract_data	extract_data
 increment_t	increment_t
+plot_distributions	plot_distributions
+plot_joint_distributions	plot_joint_distributions
 rsum	rsum
 simulate	simulate
 unsafe_rsum	unsafe_rsum
