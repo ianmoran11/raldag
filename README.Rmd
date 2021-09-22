@@ -97,7 +97,7 @@ blank_plot + blank_plot
 Now that we have a DAG with an underlying data generating process, we can simulate data:
 
 ```{r message = FALSE, warning = FALSE}
-g %>% simulate(label = "Observational")
+g %>% simulate()
 ```
 
 ### Introduce interventions
@@ -106,12 +106,12 @@ We can also examine causal effects using interventions, inspired by Pearl's [do-
 
 For example, we can set `a` to 0:
 ```{r message = FALSE, warning = FALSE}
-g %>% raldag::do(a =  0) %>% simulate(label = "do(a =  0)",seed = 1)
+g %>% raldag::do(a =  0) %>% simulate()
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 ```{r message = FALSE, warning = FALSE}
-g %>% raldag::do(a =  1) %>% simulate(label = "do(a =  1)",seed = 1)
+g %>% raldag::do(a =  1) %>% simulate()
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
