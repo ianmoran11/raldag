@@ -43,13 +43,13 @@ Now that we have a DAG with an underlying data generating process, we
 can simulate data:
 
 ``` r
-g %>% simulate(label = "Observational")
+g %>% simulate()
 #> # A tibble: 10,000 x 7
-#>   sim_id      a     c     m     x     y label        
-#>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>        
-#> 1      1  0.526  11.4  39.6  28.5  29.5 Observational
-#> 2      2 -0.488  11.7  38.6  26.4  29.5 Observational
-#> 3      3  1.14   10.5  42.5  44.4  32.2 Observational
+#>   sim_id      a     c     m     x     y label         
+#>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
+#> 1      1  0.526  11.4  39.6  28.5  29.5 simulation set
+#> 2      2 -0.488  11.7  38.6  26.4  29.5 simulation set
+#> 3      3  1.14   10.5  42.5  44.4  32.2 simulation set
 #> # … with 9,997 more rows
 ```
 
@@ -62,26 +62,26 @@ Pearl’s
 For example, we can set `a` to 0:
 
 ``` r
-g %>% raldag::do(a =  0) %>% simulate(label = "do(a =  0)",seed = 1)
+g %>% raldag::do(a = 0) %>% simulate()
 #> # A tibble: 10,000 x 7
-#>   sim_id     a     c     m     x     y label     
-#>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>     
-#> 1      1     0  6.78  40.5  32.5  20.1 do(a =  0)
-#> 2      2     0  5.77  40.5  33.6  19.3 do(a =  0)
-#> 3      3     0  5.86  38.7  28.3  19.0 do(a =  0)
+#>   sim_id     a     c     m     x     y label         
+#>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
+#> 1      1     0  10.1  41.7  29.4  27.6 simulation set
+#> 2      2     0  17.1  38.1  26.3  40.6 simulation set
+#> 3      3     0  10.0  40.9  23.8  27.0 simulation set
 #> # … with 9,997 more rows
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 
 ``` r
-g %>% raldag::do(a =  1) %>% simulate(label = "do(a =  1)",seed = 1)
+g %>% raldag::do(a = 1) %>% simulate()
 #> # A tibble: 10,000 x 7
-#>   sim_id     a     c     m     x     y label     
-#>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>     
-#> 1      1     1  6.78  43.5  41.5  20.1 do(a =  1)
-#> 2      2     1  5.77  43.5  42.6  19.3 do(a =  1)
-#> 3      3     1  5.86  41.7  37.3  19.0 do(a =  1)
+#>   sim_id     a     c     m     x     y label         
+#>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
+#> 1      1     1 19.3   43.9  42.3  48.3 simulation set
+#> 2      2     1 14.2   43.8  42.0  36.6 simulation set
+#> 3      3     1  8.41  44.7  36.2  20.6 simulation set
 #> # … with 9,997 more rows
 ```
 

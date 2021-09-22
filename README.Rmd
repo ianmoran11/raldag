@@ -106,18 +106,18 @@ We can also examine causal effects using interventions, inspired by Pearl's [do-
 
 For example, we can set `a` to 0:
 ```{r message = FALSE, warning = FALSE}
-g %>% raldag::do(a =  0) %>% simulate()
+g %>% raldag::do(a = 0) %>% simulate()
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 ```{r message = FALSE, warning = FALSE}
-g %>% raldag::do(a =  1) %>% simulate()
+g %>% raldag::do(a = 1) %>% simulate()
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
 obs <- g %>% simulate(label = "Observational")
-do0 <- g %>% raldag::do(a =  0) %>% simulate(label = "do(a =  0)",seed = 1)
-do1 <- g %>% raldag::do(a =  1) %>% simulate(label = "do(a =  1)",seed = 1)
+do0 <- g %>% raldag::do(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
+do1 <- g %>% raldag::do(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
 ```
 
 ### Compare intervention distributions

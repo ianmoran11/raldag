@@ -5,7 +5,7 @@
 #' @param label the label associated with simulated data. 
 #' @export
 #' 
-simulate <- function(g,label, seed = NULL){ 
+simulate <- function(g,label = "simulation set", seed = NULL){ 
 
    if(!is.null(seed)){set.seed(seed)}
 
