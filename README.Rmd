@@ -73,7 +73,7 @@ In this case, the node `c` generates 1000 observations with a mean equal to the 
 
 ### Declare causal connections
 
-Causal connections between nodes as well as coefficients are specified with the graph syntax from [ralget](github.com/ianmoran11/ralget)
+Causal connections between nodes as well as coefficients are specified with the graph syntax from [ralget](https://github.com/ianmoran11/ralget)
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, include = TRUE, results = "hide"}
  (a * b(9) + m * b(1)) * x +

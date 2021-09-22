@@ -27,7 +27,8 @@ to the sum of its input edges plus 10 and a standard deviation of 4.
 ### Declare causal connections
 
 Causal connections between nodes as well as coefficients are specified
-with the graph syntax from [ralget](github.com/ianmoran11/ralget)
+with the graph syntax from
+[ralget](https://github.com/ianmoran11/ralget)
 
 ``` r
  (a * b(9) + m * b(1)) * x +
