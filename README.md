@@ -4,6 +4,9 @@
 # raldag
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 `raldag` helps you create DAGs and generate data from them.
@@ -48,9 +51,9 @@ g %>% simulate()
 #> # A tibble: 10,000 x 7
 #>   sim_id      a     c     m     x     y label         
 #>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1  0.526  11.4  39.6  28.5  29.5 simulation set
-#> 2      2 -0.488  11.7  38.6  26.4  29.5 simulation set
-#> 3      3  1.14   10.5  42.5  44.4  32.2 simulation set
+#> 1      1 0.237   6.92  39.4  33.4  19.4 simulation set
+#> 2      2 0.353   6.66  43.1  30.3  20.9 simulation set
+#> 3      3 0.0119  6.59  39.4  30.9  16.5 simulation set
 #> # … with 9,997 more rows
 ```
 
@@ -67,9 +70,9 @@ g %>% raldag::do(a = 0) %>% simulate()
 #> # A tibble: 10,000 x 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1     0  10.1  41.7  29.4  27.6 simulation set
-#> 2      2     0  17.1  38.1  26.3  40.6 simulation set
-#> 3      3     0  10.0  40.9  23.8  27.0 simulation set
+#> 1      1     0  8.93  37.8  27.7  24.8 simulation set
+#> 2      2     0  9.76  41.2  29.7  25.7 simulation set
+#> 3      3     0  5.55  42.7  30.8  17.0 simulation set
 #> # … with 9,997 more rows
 ```
 
@@ -80,9 +83,9 @@ g %>% raldag::do(a = 1) %>% simulate()
 #> # A tibble: 10,000 x 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1     1 19.3   43.9  42.3  48.3 simulation set
-#> 2      2     1 14.2   43.8  42.0  36.6 simulation set
-#> 3      3     1  8.41  44.7  36.2  20.6 simulation set
+#> 1      1     1  8.44  41.2  39.4  22.6 simulation set
+#> 2      2     1  4.02  44.6  41.6  13.4 simulation set
+#> 3      3     1 11.6   39.7  39.9  30.4 simulation set
 #> # … with 9,997 more rows
 ```
 
