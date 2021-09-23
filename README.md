@@ -24,7 +24,7 @@ y <- v("y", .f = d(~ rnorm(n = 10^4, mean = rsum(.x) +  7, sd =  2)))
 m <- v("m", .f = d(~ rnorm(n = 10^4, mean = rsum(.x) + 40, sd =  2)))
 ```
 
-In this case, the node `c` generates 1000 observations with a mean equal
+In this case, the node `c` generates 10000 observations with a mean equal
 to the sum of its input edges plus 10 and a standard deviation of 4.
 
 ### Declare causal connections
