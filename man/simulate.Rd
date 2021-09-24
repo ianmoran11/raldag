@@ -10,6 +10,8 @@ simulate(g, label = "simulation set", seed = NULL)
 \item{g}{a ralget DAG}
 
 \item{label}{the label associated with simulated data.}
+
+\item{seed}{the label associated with simulated data.}
 }
 \description{
 Simulate data from a dag

@@ -7,6 +7,9 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/ianmoran11/raldag/branch/master/graph/badge.svg)](https://codecov.io/gh/ianmoran11/raldag?branch=master)
+[![R-CMD-check](https://github.com/ianmoran11/raldag/workflows/R-CMD-check/badge.svg)](https://github.com/ianmoran11/raldag/actions)
 <!-- badges: end -->
 
 `raldag` helps you create DAGs and generate data from them.
@@ -47,13 +50,13 @@ Now that we have a DAG with an underlying data generating process, we
 can simulate data:
 
 ``` r
-g %>% simulate()
+g %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
 #>   sim_id      a     c     m     x     y label         
 #>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1 0.237   6.92  39.4  33.4  19.4 simulation set
-#> 2      2 0.353   6.66  43.1  30.3  20.9 simulation set
-#> 3      3 0.0119  6.59  39.4  30.9  16.5 simulation set
+#> 1      1 -0.560 19.5   36.6  24.2  46.9 simulation set
+#> 2      2 -0.230  9.33  38.9  29.0  27.1 simulation set
+#> 3      3  1.56  13.7   40.5  41.9  33.4 simulation set
 #> # … with 9,997 more rows
 ```
 
@@ -66,26 +69,26 @@ Pearl’s
 For example, we can set `a` to 0:
 
 ``` r
-g %>% raldag::do(a = 0) %>% simulate()
+g %>% do(m = 0) %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
-#>   sim_id     a     c     m     x     y label         
-#>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1     0  8.93  37.8  27.7  24.8 simulation set
-#> 2      2     0  9.76  41.2  29.7  25.7 simulation set
-#> 3      3     0  5.55  42.7  30.8  17.0 simulation set
+#>   sim_id      a     c     m     x     y label         
+#>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
+#> 1      1 -0.560 19.5      0  24.2  46.9 simulation set
+#> 2      2 -0.230  9.33     0  29.0  27.1 simulation set
+#> 3      3  1.56  13.7      0  41.9  33.4 simulation set
 #> # … with 9,997 more rows
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 
 ``` r
-g %>% raldag::do(a = 1) %>% simulate()
+g %>% do(a = 1) %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1     1  8.44  41.2  39.4  22.6 simulation set
-#> 2      2     1  4.02  44.6  41.6  13.4 simulation set
-#> 3      3     1 11.6   39.7  39.9  30.4 simulation set
+#> 1      1     1 19.5   41.3  38.2  46.9 simulation set
+#> 2      2     1  9.33  42.6  40.0  27.1 simulation set
+#> 3      3     1 13.7   38.8  36.8  33.4 simulation set
 #> # … with 9,997 more rows
 ```
 

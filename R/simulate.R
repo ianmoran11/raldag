@@ -3,6 +3,7 @@
 #'
 #' @param g a ralget DAG 
 #' @param label the label associated with simulated data. 
+#' @param seed the label associated with simulated data. 
 #' @export
 #' 
 simulate <- function(g,label = "simulation set", seed = NULL){ 

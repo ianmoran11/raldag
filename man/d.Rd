@@ -7,7 +7,9 @@
 d(x, env = caller_env())
 }
 \arguments{
-\item{...}{a data generating process as an anonymous equation}
+\item{x}{ralget}
+
+\item{env}{assignment expressions for node in DAG}
 }
 \description{
 Specify a data generating process

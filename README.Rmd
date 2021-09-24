@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Codecov test coverage](https://codecov.io/gh/ianmoran11/raldag/branch/master/graph/badge.svg)](https://codecov.io/gh/ianmoran11/raldag?branch=master)
+[![R-CMD-check](https://github.com/ianmoran11/raldag/workflows/R-CMD-check/badge.svg)](https://github.com/ianmoran11/raldag/actions)
 <!-- badges: end -->
 
 `raldag` helps you create DAGs and generate data from them. 
@@ -31,7 +33,11 @@ library(magrittr)
 library(ralget)
 library(ggforce)
 library(raldag)
+library("conflicted")
 options(dplyr.print_max = 3,dplyr.print_min = 3)
+conflict_prefer("do", "raldag")
+conflict_prefer("filter", "dplyr")
+conflict_prefer("simulate", "raldag")
 ```
 
 ```{r,echo = FALSE, message=FALSE, warning=FALSE, include=FALSE}
@@ -98,7 +104,7 @@ blank_plot + blank_plot
 Now that we have a DAG with an underlying data generating process, we can simulate data:
 
 ```{r message = FALSE, warning = FALSE}
-g %>% simulate()
+g %>% simulate(seed = 123)
 ```
 
 ### Introduce interventions
@@ -107,12 +113,12 @@ We can also examine causal effects using interventions, inspired by Pearl's [do-
 
 For example, we can set `a` to 0:
 ```{r message = FALSE, warning = FALSE}
-g %>% raldag::do(a = 0) %>% simulate()
+g %>% do(m = 0) %>% simulate(seed = 123)
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 ```{r message = FALSE, warning = FALSE}
-g %>% raldag::do(a = 1) %>% simulate()
+g %>% do(a = 1) %>% simulate(seed = 123)
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}

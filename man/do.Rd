@@ -7,9 +7,9 @@
 do(graph, ...)
 }
 \arguments{
-\item{g}{ralget}
+\item{graph}{ralget}
 
-\item{p}{assignment expressions for node in DAG}
+\item{...}{assignment expressions for node in DAG}
 }
 \description{
 Set value for variable in DAG

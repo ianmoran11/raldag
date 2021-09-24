@@ -1,7 +1,7 @@
 #' Set value for variable in DAG
 #'
-#' @param g ralget
-#' @param p assignment expressions for node in DAG
+#' @param graph ralget
+#' @param ... assignment expressions for node in DAG
 #' @export
 
 do.ralget <-function(graph,...){
@@ -32,8 +32,8 @@ const_map <-  function(f,val){
 
 #' Set value for variable in DAG
 #'
-#' @param g ralget
-#' @param p assignment expressions for node in DAG
+#' @param graph ralget
+#' @param ... assignment expressions for node in DAG
 #' @export
 
  do <- function (graph,...){

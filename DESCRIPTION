@@ -22,11 +22,15 @@ Imports:
     stringr,
     rlang,
     ggraph,
-    forcats
+    forcats,
+    conflicted,
+    ralget
 Suggests: 
-    testthat (>= 2.1.0),
+    testthat (>= 3.0.0),
     knitr,
     rmarkdown,
-    tidyverse
+    tidyverse,
+    covr
 Remotes:
     ianmoran11/ralget
+Config/testthat/edition: 3
