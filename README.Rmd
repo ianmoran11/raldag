@@ -95,7 +95,7 @@ g <-
  (a * b(3) + c * b(5)) * m
 
 blank_plot <- ggplot(NULL) + theme(panel.background = element_rect(fill = 'white', colour = 'white'))
-(plotter(g) + xlim(c(.25,1.75)) + ylim(c(.5,3.5))   ) +
+(plotter(g) + xlim(c(.45,1.55)) + ylim(c(1,3))   ) +
 blank_plot + blank_plot
 ```
 
@@ -113,12 +113,12 @@ We can also examine causal effects using interventions, inspired by Pearl's [do-
 
 For example, we can set `a` to 0:
 ```{r message = FALSE, warning = FALSE}
-g %>% do(m = 0) %>% simulate(seed = 123)
+g %>% raldag::do(m = 0) %>% simulate(seed = 123)
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 ```{r message = FALSE, warning = FALSE}
-g %>% do(a = 1) %>% simulate(seed = 123)
+g %>% raldag::do(a = 1) %>% simulate(seed = 123)
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
@@ -138,6 +138,7 @@ bind_rows(obs, do0, do1) %>%
 
 ## Installation
 You can install the development version from [GitHub](https://github.com/) with:
+
 ``` r
 # install.packages("devtools")
 devtools::install_github("ianmoran11/raldag")
