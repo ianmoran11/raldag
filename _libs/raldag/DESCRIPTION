@@ -12,12 +12,13 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: dplyr, tidyr, purrr, tidygraph, magrittr, tibble, stringr,
-        rlang, ggraph, forcats
-Suggests: testthat (>= 2.1.0), knitr, rmarkdown, tidyverse
+        rlang, ggraph, forcats, conflicted, ralget
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, tidyverse, covr
 Remotes: ianmoran11/ralget
+Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-09-22 11:15:10 UTC; ian
+Packaged: 2021-09-25 21:09:36 UTC; ian
 Author: Ian Moran [aut, cre]
 Maintainer: Ian Moran <ian.moran11@gmail.com>
 Depends: R (>= 3.5.0)
-Built: R 4.1.1; ; 2021-09-22 11:15:11 UTC; unix
+Built: R 4.1.1; ; 2021-09-25 21:09:39 UTC; unix
