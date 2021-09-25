@@ -14,8 +14,9 @@ RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Imports: dplyr, tidyr, purrr, tidygraph, magrittr, tibble, stringr,
         rlang, ggraph, forcats
-Suggests: testthat (>= 2.1.0), knitr, rmarkdown, tidyverse
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, tidyverse, covr
+Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-09-22 10:12:50 UTC; ian
+Packaged: 2021-09-25 20:46:03 UTC; ian
 Depends: R (>= 3.5.0)
-Built: R 4.1.1; ; 2021-09-22 10:12:51 UTC; unix
+Built: R 4.1.1; ; 2021-09-25 20:46:08 UTC; unix

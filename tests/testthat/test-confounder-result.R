@@ -1,6 +1,5 @@
-test_that("mult works", {
+test_that("Butterfly dag", {
 
-rm(list = ls())
 library(tidyverse)
 library(tidygraph)
 library(ggraph)
@@ -25,9 +24,8 @@ g <-
  (a * b(3) + c * b(5)) * m
 
 obs <- g %>% simulate(label = "Observational")
-
-do0 <- g %>% do(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
-do1 <- g %>% do(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
+do0 <- g %>% raldag::do(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
+do1 <- g %>% raldag::do(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
 
 check_manipulation <- 
 bind_rows(do0,do1) %>%
@@ -47,5 +45,4 @@ bind_rows(do0,do1) %>%
 
 expect_true(check_effect)
 expect_true(check_manipulation)
-
 })
