@@ -2,10 +2,9 @@ b                       A shorthand to represent coefficient in a data
                         generating process.
 const_map               Set value for variable in DAG
 d                       Specify a data generating process
-do                      Set value for variable in DAG
-do.ralget               Set value for variable in DAG
 extract_data            Set value for variable in DAG
 increment_t             Set value for variable in DAG
+manipulate              Set value for variable in DAG
 plot_distributions      Simulate data from a dag
 plot_joint_distributions
                         Simulate data from a dag

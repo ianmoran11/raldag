@@ -9,7 +9,6 @@ library(ralget)
 library(raldag)
 library("conflicted")
 options(dplyr.print_max = 3,dplyr.print_min = 3)
-conflict_prefer("do", "raldag")
 conflict_prefer("filter", "dplyr")
 conflict_prefer("simulate", "raldag")
 
@@ -25,8 +24,8 @@ g <-
  (a * b(3) + c * b(5)) * m
 
 obs <- g %>% simulate(label = "Observational")
-do0 <- g %>% raldag::do(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
-do1 <- g %>% raldag::do(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
+do0 <- g %>% manipulate(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
+do1 <- g %>% manipulate(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
 
 bind_rows(obs, do0, do1) %>% 
   gather(var,value, -sim_id,-label) %>%

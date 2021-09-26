@@ -4,7 +4,7 @@
 #' @param ... assignment expressions for node in DAG
 #' @export
 
-do.ralget <-function(graph,...){
+manipulate <-function(graph,...){
  #browser()
 
 l <- list(...)
@@ -28,14 +28,4 @@ const_map <-  function(f,val){
 
   function(...){ ifelse("hesdlkfjsldfkjllo" != f(...),val, f(...))}
 
-}
-
-#' Set value for variable in DAG
-#'
-#' @param graph ralget
-#' @param ... assignment expressions for node in DAG
-#' @export
-
- do <- function (graph,...){
-    UseMethod("do")
 }

@@ -24,8 +24,8 @@ g <-
  (a * b(3) + c * b(5)) * m
 
 obs <- g %>% simulate(label = "Observational")
-do0 <- g %>% raldag::do(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
-do1 <- g %>% raldag::do(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
+do0 <- g %>% manipulate(a = 0) %>% simulate(label = "do(a = 0)",seed = 1)
+do1 <- g %>% manipulate(a = 1) %>% simulate(label = "do(a = 1)",seed = 1)
 
 check_manipulation <- 
 bind_rows(do0,do1) %>%
