@@ -69,20 +69,20 @@ Pearl’s
 For example, we can set `a` to 0:
 
 ``` r
-g %>% raldag::do(m = 0) %>% simulate(seed = 123)
+g %>% manipulate(a = 0) %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
-#>   sim_id      a     c     m     x     y label         
-#>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1 -0.560 19.5      0  24.2  46.9 simulation set
-#> 2      2 -0.230  9.33     0  29.0  27.1 simulation set
-#> 3      3  1.56  13.7      0  41.9  33.4 simulation set
+#>   sim_id     a     c     m     x     y label         
+#>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
+#> 1      1     0 19.5   38.3  29.2  46.9 simulation set
+#> 2      2     0  9.33  39.6  31.0  27.1 simulation set
+#> 3      3     0 13.7   35.8  27.8  33.4 simulation set
 #> # … with 9,997 more rows
 ```
 
 And we could compare that with what happens when `a` is set to 1:
 
 ``` r
-g %>% raldag::do(a = 1) %>% simulate(seed = 123)
+g %>% manipulate(a = 1) %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
