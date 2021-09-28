@@ -8,6 +8,7 @@ let
       tidyverse
       usethis
       tidybayes
+      ggdag
       tidygraph
       usethis
       ggraph

@@ -8,7 +8,6 @@ library(ralget)
 library(raldag)
 library("conflicted")
 options(dplyr.print_max = 3,dplyr.print_min = 3)
-conflict_prefer("do", "raldag")
 conflict_prefer("filter", "dplyr")
 conflict_prefer("simulate", "raldag")
 

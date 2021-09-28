@@ -17,6 +17,6 @@ Imports: dplyr, tidyr, purrr, tidygraph, magrittr, tibble, stringr,
 Suggests: testthat (>= 3.0.0), knitr, rmarkdown, tidyverse, covr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2021-09-25 21:07:06 UTC; ian
+Packaged: 2021-09-28 11:17:49 UTC; ian
 Depends: R (>= 3.5.0)
-Built: R 4.1.1; ; 2021-09-25 21:07:11 UTC; unix
+Built: R 4.1.1; ; 2021-09-28 11:17:54 UTC; unix

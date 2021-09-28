@@ -25,6 +25,8 @@ Imports:
     forcats,
     conflicted,
     ggforce,
+    dagitty,
+    ggdag,
     ralget
 Suggests: 
     testthat (>= 3.0.0),

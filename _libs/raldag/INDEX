@@ -5,6 +5,7 @@ d                       Specify a data generating process
 extract_data            Set value for variable in DAG
 increment_t             Set value for variable in DAG
 manipulate              Set value for variable in DAG
+plot.ralget             Set value for variable in DAG
 plot_distributions      Simulate data from a dag
 plot_joint_distributions
                         Simulate data from a dag
