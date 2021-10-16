@@ -79,19 +79,17 @@ In this case, the node `c` generates 1000 observations with a mean equal to the 
 Causal connections between nodes as well as coefficients are specified with the graph syntax from [ralget](https://github.com/ianmoran11/ralget)
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, include = TRUE, results = "hide"}
- (a * b(1) + m * b(1)) * x +
- (c * b(1) + m * b(1)) * y +
- (a * b(1) + c * b(1)) * m
+ (a * b(10) + m * b(10)) * x +
+ (c * b(10) + m * b(10)) * y +
+ (a * b(10) + c * b(10)) * m
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, include = TRUE, fig.height=5, fig.width=12}
-g <- (a * b(1) + m * b(1)) * x +
-     (c * b(1) + m * b(1)) * y +
-     (a * b(1) + c * b(1)) * m
+g <- (a * b(10) + m * b(10)) * x +
+     (c * b(10) + m * b(10)) * y +
+     (a * b(10) + c * b(10)) * m
 
-blank_plot <- ggplot(NULL) + theme(panel.background = element_rect(fill = 'white', colour = 'white'))
-(plotter(g) + xlim(c(.45,1.55)) + ylim(c(1,3))   ) +
-blank_plot + blank_plot
+plot(g)
 ```
 
 ### Generate data from DAG

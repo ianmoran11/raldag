@@ -37,9 +37,9 @@ with the graph syntax from
 [ralget](https://github.com/ianmoran11/ralget)
 
 ``` r
- (a * b(1) + m * b(1)) * x +
- (c * b(1) + m * b(1)) * y +
- (a * b(1) + c * b(1)) * m
+ (a * b(10) + m * b(10)) * x +
+ (c * b(10) + m * b(10)) * y +
+ (a * b(10) + c * b(10)) * m
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
@@ -54,9 +54,9 @@ g %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
 #>   sim_id      a     c     m     x     y label         
 #>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1  2.37   9.81  20.4  28.2  32.8 simulation set
-#> 2      2 -0.167 10.3   19.0  23.2  31.3 simulation set
-#> 3      3  0.927  9.46  17.7  23.9  29.1 simulation set
+#> 1      1  2.37   9.81  130. 1329. 1401. simulation set
+#> 2      2 -0.167 10.3   110. 1101. 1203. simulation set
+#> 3      3  0.927  9.46  111. 1126. 1208. simulation set
 #> # … with 9,997 more rows
 ```
 
@@ -73,9 +73,9 @@ g %>% manipulate(a = 0) %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1     0  9.81  18.1  23.5  30.4 simulation set
-#> 2      2     0 10.3   19.2  23.5  31.5 simulation set
-#> 3      3     0  9.46  16.7  22.0  28.2 simulation set
+#> 1      1     0  9.81  106. 1069. 1164. simulation set
+#> 2      2     0 10.3   111. 1119. 1220. simulation set
+#> 3      3     0  9.46  102. 1024. 1116. simulation set
 #> # … with 9,997 more rows
 ```
 
@@ -86,9 +86,9 @@ g %>% manipulate(a = 1) %>% simulate(seed = 123)
 #> # A tibble: 10,000 x 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
-#> 1      1     1  9.81  19.1  25.5  31.4 simulation set
-#> 2      2     1 10.3   20.2  25.5  32.5 simulation set
-#> 3      3     1  9.46  17.7  24.0  29.2 simulation set
+#> 1      1     1  9.81  116. 1179. 1264. simulation set
+#> 2      2     1 10.3   121. 1229. 1320. simulation set
+#> 3      3     1  9.46  112. 1134. 1216. simulation set
 #> # … with 9,997 more rows
 ```
 

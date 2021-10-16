@@ -14,23 +14,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(raldag)
+```{r}
 rm(list = ls())
-library(devtools)
 library(tidyverse)
 library(ggdag)
 library(tidygraph)
 library(dagitty)
 library(ggraph)
-library(patchwork)
-library(magrittr)
-library(ggforce)
-library(boot)
 library(ralget)
 library(raldag)
-options(width = 120)
+```
 
+## Create crosssectional DAG 
+```{r message=FALSE, warning=FALSE, include = TRUE, fig.height=5, fig.width=7}
 z <- v("z", .f = d(~ rnorm(n = 10^3, mean =  rsum(.x), sd = 1)))
 x <- v("x", .f = d(~ rnorm(n = 10^3, mean =  rsum(.x), sd = 1)))
 y <- v("y", .f = d(~ rnorm(n = 10^3, mean =  rsum(.x), sd = 1)))
@@ -38,6 +34,12 @@ y <- v("y", .f = d(~ rnorm(n = 10^3, mean =  rsum(.x), sd = 1)))
 g <- (z * b(1) + x * b(1)) * y +
      (z * b(1) * x)
 
+plot(g)
+```
+
+
+## Create timeseries structure
+```{r message=FALSE, warning=FALSE, include = TRUE, fig.height=5, fig.width=7}
 t1 <- v("t1", .f = d(~ rnorm(n = 10^3, mean = rsum(.x), sd =  1)))
 t2 <- v("t2", .f = d(~ rnorm(n = 10^3, mean = rsum(.x), sd =  1)))
 t3 <- v("t3", .f = d(~ rnorm(n = 10^3, mean = rsum(.x), sd =  1)))
@@ -47,8 +49,19 @@ t5 <- v("t5", .f = d(~ rnorm(n = 10^3, mean = rsum(.x), sd =  1)))
 t <- (t1 * b(1) * t2) + (t2 * b(1) * t3) +
      (t3 * b(1) * t4) + (t4 * b(1) * t5)
 
-xt <- cartesian_product(g,t,node_combine =  ~ c(.x), edge_combine =  ~ c(.x,.y))
+plot(t)
+```
 
+
+## Take product of cross section and timeseries 
+```{r message=FALSE, warning=FALSE, include = TRUE, fig.height=5, fig.width=7}
+xt <- cartesian_product(g,t,node_combine =  ~ c(.x), edge_combine =  ~ c(.x,.y))
+plot(xt)
+```
+
+
+## Test the effect of interventions 
+```{r message=FALSE, warning=FALSE, include = TRUE, fig.height=5, fig.width=7}
 z_t2_0 <- xt %>% manipulate(z_t3 = 0) %>% simulate(label = "z_t2 = 0",seed = 2)
 z_t2_1 <- xt %>% manipulate(z_t3 = 1) %>% simulate(label = "z_t2 = 1",seed = 2)
 
@@ -61,5 +74,4 @@ ggplot(aes(x = period, y = val, group = sim_id, color = label)) + geom_line(alph
 facet_wrap(~var, scales = "free") +  
 stat_summary(aes(group = label),fun=mean,geom="line", size = 1)  +
 theme_bw()
-
 ```

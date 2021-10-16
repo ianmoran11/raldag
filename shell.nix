@@ -17,11 +17,12 @@ let
       rmarkdown
       languageserver
       stringi
+      qpdf
       microbenchmark
     ];
   };
 in mkShell {
-  buildInputs = with pkgs; [pandoc vscodium git glibcLocales openssl which openssh curl wget ];
+  buildInputs = with pkgs; [pandoc vscodium git glibcLocales openssl which openssh curl wget libjpeg qpdf openjpeg ];
   inputsFrom = [ my-r-pkgs ];
   shellHook = ''
     mkdir -p "$(pwd)/_libs"
