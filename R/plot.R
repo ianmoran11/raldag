@@ -9,7 +9,7 @@
 #' 
 plot.ralget <- function(x,...){
 
-g %>% activate("edges") %>% mutate(daggity_text= paste0(from_name, " -> ",to_name)) %>% 
+x %>% activate("edges") %>% mutate(daggity_text= paste0(from_name, " -> ",to_name)) %>% 
 pull(daggity_text) %>% paste(collapse = "\n") %>% paste("dag {",.,"}") %>% dagitty() %>%
 tidy_dagitty() %>%
 ggdag(.) +

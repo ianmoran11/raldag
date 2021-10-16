@@ -23,7 +23,6 @@ Imports:
     rlang,
     ggraph,
     forcats,
-    conflicted,
     ggforce,
     dagitty,
     ggdag,
@@ -37,3 +36,4 @@ Suggests:
 Remotes:
     ianmoran11/ralget
 Config/testthat/edition: 3
+VignetteBuilder: knitr

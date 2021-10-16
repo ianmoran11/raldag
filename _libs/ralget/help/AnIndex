@@ -10,7 +10,5 @@ evaluate_execute	evaluate_execute
 evaluate_prepare	evaluate_prepare
 get_edge_names	get_edge_names
 overlay	overlay
-rsum	rsum
 sumv	sumv
-unsafe_rsum	unsafe_rsum
 v	v

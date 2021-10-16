@@ -6,10 +6,7 @@ library(ggraph)
 library(magrittr)
 library(ralget)
 library(raldag)
-library("conflicted")
 options(dplyr.print_max = 3,dplyr.print_min = 3)
-conflict_prefer("filter", "dplyr")
-conflict_prefer("simulate", "raldag")
 
 c <- v("c", .f = d(~ rnorm(n = 10^4, mean = rsum(.x) + 10, sd =  4)))
 a <- v("a", .f = d(~ rnorm(n = 10^4, mean = rsum(.x)     , sd =  1)))
@@ -40,7 +37,7 @@ bind_rows(do0,do1) %>%
   spread(label,value) %>%
   mutate(diff =  `do(a = 1)` - `do(a = 0)`) %>%
   filter(var == "x") %>%
-  pull(diff) %>% round() %>% `==`(9) %>% all()
+  pull(diff) %>% round() %>% `==`(12) %>% all()
 
 expect_true(check_effect)
 expect_true(check_manipulation)
