@@ -1,9 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# raldag
-
-# mmtable2 <a> <img src='man/figures/logo.png' align="right" height="131.5" /></a>
+# raldag <a> <img src='man/figures/logo.png' align="right" height="131.5" /></a>
 
 <!-- badges: start -->
 
