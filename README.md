@@ -3,6 +3,8 @@
 
 # raldag
 
+# mmtable2 <a> <img src='man/figures/logo.png' align="right" height="131.5" /></a>
+
 <!-- badges: start -->
 
 [![Lifecycle:
@@ -51,7 +53,7 @@ can simulate data:
 
 ``` r
 g %>% simulate(seed = 123)
-#> # A tibble: 10,000 x 7
+#> # A tibble: 10,000 × 7
 #>   sim_id      a     c     m     x     y label         
 #>    <int>  <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
 #> 1      1  2.37   9.81  130. 1329. 1401. simulation set
@@ -70,7 +72,7 @@ For example, we can set `a` to 0:
 
 ``` r
 g %>% manipulate(a = 0) %>% simulate(seed = 123)
-#> # A tibble: 10,000 x 7
+#> # A tibble: 10,000 × 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
 #> 1      1     0  9.81  106. 1069. 1164. simulation set
@@ -83,7 +85,7 @@ And we could compare that with what happens when `a` is set to 1:
 
 ``` r
 g %>% manipulate(a = 1) %>% simulate(seed = 123)
-#> # A tibble: 10,000 x 7
+#> # A tibble: 10,000 × 7
 #>   sim_id     a     c     m     x     y label         
 #>    <int> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>         
 #> 1      1     1  9.81  116. 1179. 1264. simulation set
