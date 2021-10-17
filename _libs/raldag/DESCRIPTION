@@ -16,9 +16,10 @@ Imports: dplyr, tidyr, purrr, tidygraph, magrittr, tibble, stringr,
 Suggests: testthat (>= 3.0.0), knitr, rmarkdown, tidyverse, covr
 Remotes: ianmoran11/ralget
 Config/testthat/edition: 3
+VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2021-10-16 08:52:45 UTC; ian
+Packaged: 2021-10-17 04:48:41 UTC; ian
 Author: Ian Moran [aut, cre]
 Maintainer: Ian Moran <ian.moran11@gmail.com>
 Depends: R (>= 3.5.0)
-Built: R 4.1.1; ; 2021-10-16 08:52:49 UTC; unix
+Built: R 4.1.1; ; 2021-10-17 04:48:45 UTC; unix

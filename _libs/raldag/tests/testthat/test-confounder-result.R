@@ -37,7 +37,7 @@ bind_rows(do0,do1) %>%
   spread(label,value) %>%
   mutate(diff =  `do(a = 1)` - `do(a = 0)`) %>%
   filter(var == "x") %>%
-  pull(diff) %>% round() %>% `==`(9) %>% all()
+  pull(diff) %>% round() %>% `==`(12) %>% all()
 
 expect_true(check_effect)
 expect_true(check_manipulation)

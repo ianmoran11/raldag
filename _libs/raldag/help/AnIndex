@@ -4,6 +4,8 @@ d	d
 extract_data	extract_data
 increment_t	increment_t
 manipulate	manipulate
+panel_gather	panel_gather
+panel_plot	panel_plot
 plot.ralget	plot.ralget
 plot_distributions	plot_distributions
 plot_joint_distributions	plot_joint_distributions
