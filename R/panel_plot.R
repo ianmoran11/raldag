@@ -1,6 +1,6 @@
 #' Set value for variable in DAG
 #'
-#' @param g evaluated ralget graph
+#' @param df panel formated simulated DAG.
 #' @export
 
 panel_plot <- function(df){

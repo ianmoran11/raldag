@@ -7,7 +7,7 @@
 panel_gather(df)
 }
 \arguments{
-\item{g}{evaluated ralget graph}
+\item{df}{simulated panel df.}
 }
 \description{
 Set value for variable in DAG
