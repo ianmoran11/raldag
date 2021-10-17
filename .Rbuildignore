@@ -1,2 +1,10 @@
 ^codecov\.yml$
 ^\.github$
+^.*\.Rproj$
+^\.Rproj\.user$
+^raldag\.Rcheck$
+^raldag.*\.tar\.gz$
+^raldag.*\.tgz$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

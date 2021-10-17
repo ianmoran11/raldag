@@ -1,1 +1,6 @@
 inst/doc
+.Rproj.user
+raldag.Rcheck/
+raldag*.tar.gz
+raldag*.tgz
+docs
