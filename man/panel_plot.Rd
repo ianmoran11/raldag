@@ -7,7 +7,7 @@
 panel_plot(df)
 }
 \arguments{
-\item{g}{evaluated ralget graph}
+\item{df}{panel formated simulated DAG.}
 }
 \description{
 Set value for variable in DAG

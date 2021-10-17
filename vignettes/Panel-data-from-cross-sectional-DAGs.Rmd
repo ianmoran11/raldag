@@ -2,7 +2,7 @@
 title: "Panel data from cross-sectional DAGs"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Panel}
+  %\VignetteIndexEntry{Panel data from cross-sectional DAGs}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

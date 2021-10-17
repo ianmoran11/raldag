@@ -54,7 +54,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/Panel.html">Panel data from cross-sectional DAGs</a>
+      <a href="../articles/Panel-data-from-cross-sectional-DAGs.html">Panel data from cross-sectional DAGs</a>
     </li>
   </ul>
 </li>
@@ -69,14 +69,14 @@
 
       
 
-      </header><script src="Panel_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
+      </header><script src="Panel-data-from-cross-sectional-DAGs_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Panel data from cross-sectional DAGs</h1>
             
       
       
-      <div class="hidden name"><code>Panel.Rmd</code></div>
+      <div class="hidden name"><code>Panel-data-from-cross-sectional-DAGs.Rmd</code></div>
 
     </div>
 
@@ -95,7 +95,7 @@
 <code class="sourceCode R"><span class="va">g</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">z</span> <span class="op">*</span> <span class="fu"><a href="../reference/b.html">b</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="va">x</span> <span class="op">*</span> <span class="fu"><a href="../reference/b.html">b</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="va">y</span> <span class="op">+</span>
      <span class="op">(</span><span class="va">z</span> <span class="op">*</span> <span class="fu"><a href="../reference/b.html">b</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></code></pre></div>
-<p><img src="Panel_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<p><img src="Panel-data-from-cross-sectional-DAGs_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
 </div>
 <div id="create-time-series-structure" class="section level2">
 <h2 class="hasAnchor">
@@ -113,7 +113,7 @@
      <span class="op">(</span><span class="va">t3</span> <span class="op">*</span> <span class="fu"><a href="../reference/b.html">b</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="va">t4</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">t4</span> <span class="op">*</span> <span class="fu"><a href="../reference/b.html">b</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="va">t5</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">t</span><span class="op">)</span></code></pre></div>
-<p><img src="Panel_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
+<p><img src="Panel-data-from-cross-sectional-DAGs_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
 </div>
 <div id="take-product-of-cross-section-and-timeseries" class="section level2">
 <h2 class="hasAnchor">
@@ -122,7 +122,7 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">xt</span> <span class="op">&lt;-</span> <span class="fu">cartesian_product</span><span class="op">(</span><span class="va">g</span>,<span class="va">t</span>,node_combine <span class="op">=</span>  <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">.x</span><span class="op">)</span>, edge_combine <span class="op">=</span>  <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">.x</span>,<span class="va">.y</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">xt</span><span class="op">)</span></code></pre></div>
-<p><img src="Panel_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
+<p><img src="Panel-data-from-cross-sectional-DAGs_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
 </div>
 <div id="compare-intervention-outcomes" class="section level2">
 <h2 class="hasAnchor">
@@ -133,7 +133,7 @@
 <span class="va">z_t2_1</span> <span class="op">&lt;-</span> <span class="va">xt</span> <span class="op">%&gt;%</span> <span class="fu"><a href="../reference/manipulate.html">manipulate</a></span><span class="op">(</span>z_t3 <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="../reference/simulate.html">simulate</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"z_t2 = 1"</span>,seed <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
 
 <span class="fu">bind_rows</span><span class="op">(</span><span class="va">z_t2_0</span>,<span class="va">z_t2_1</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="../reference/panel_gather.html">panel_gather</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="../reference/panel_plot.html">panel_plot</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><img src="Panel_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
+<p><img src="Panel-data-from-cross-sectional-DAGs_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
 </div>
   </div>
 
