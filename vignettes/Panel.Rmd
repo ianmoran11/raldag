@@ -1,5 +1,5 @@
 ---
-title: "Panel"
+title: "Panel data from cross-sectional DAGs"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Panel}
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE, echo = FALSE, fig.height=3, fig.width=7}
 rm(list = ls())
 library(tidyverse)
 library(ggdag)
