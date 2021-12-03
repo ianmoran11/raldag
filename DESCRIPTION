@@ -15,7 +15,6 @@ RoxygenNote: 7.1.2
 Imports: 
     dplyr,
     tidyr,
-#   qpdf,
     purrr,
     tidygraph,
     magrittr,
